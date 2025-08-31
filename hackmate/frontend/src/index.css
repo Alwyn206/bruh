@@ -1,0 +1,222 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Discord-like styles */
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-discord-dark-tertiary text-discord-text-primary font-sans;
+    font-family: 'Whitney', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  
+  html {
+    @apply scroll-smooth;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-discord-dark-secondary;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-discord-bg-accent rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-discord-interactive-hover;
+  }
+}
+
+@layer components {
+  /* Button Components */
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .btn-primary {
+    @apply btn bg-discord-blurple hover:bg-discord-blurple-dark text-white focus:ring-discord-blurple;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-discord-bg-accent hover:bg-discord-interactive-muted text-discord-text-primary focus:ring-discord-bg-accent;
+  }
+  
+  .btn-success {
+    @apply btn bg-discord-green hover:bg-green-600 text-white focus:ring-discord-green;
+  }
+  
+  .btn-danger {
+    @apply btn bg-discord-red hover:bg-red-600 text-white focus:ring-discord-red;
+  }
+  
+  .btn-ghost {
+    @apply btn bg-transparent hover:bg-discord-bg-accent text-discord-text-secondary hover:text-discord-text-primary;
+  }
+  
+  /* Input Components */
+  .input {
+    @apply w-full px-3 py-2 bg-discord-dark-primary border border-discord-bg-accent rounded-md text-discord-text-primary placeholder-discord-text-muted focus:outline-none focus:ring-2 focus:ring-discord-blurple focus:border-transparent transition-all duration-200;
+  }
+  
+  .input-error {
+    @apply input border-discord-red focus:ring-discord-red;
+  }
+  
+  /* Card Components */
+  .card {
+    @apply bg-discord-bg-secondary rounded-lg shadow-discord border border-discord-bg-accent;
+  }
+  
+  .card-header {
+    @apply px-6 py-4 border-b border-discord-bg-accent;
+  }
+  
+  .card-body {
+    @apply px-6 py-4;
+  }
+  
+  .card-footer {
+    @apply px-6 py-4 border-t border-discord-bg-accent;
+  }
+  
+  /* Navigation Components */
+  .nav-item {
+    @apply flex items-center px-3 py-2 rounded-md text-discord-channel-default hover:text-discord-channel-hover hover:bg-discord-bg-accent transition-all duration-200 cursor-pointer;
+  }
+  
+  .nav-item.active {
+    @apply text-discord-channel-selected bg-discord-bg-accent;
+  }
+  
+  /* Chat Components */
+  .chat-message {
+    @apply flex items-start space-x-3 px-4 py-2 hover:bg-discord-bg-accent/50 transition-colors duration-150;
+  }
+  
+  .chat-input {
+    @apply w-full px-4 py-3 bg-discord-bg-accent rounded-lg text-discord-text-primary placeholder-discord-text-muted focus:outline-none focus:ring-2 focus:ring-discord-blurple resize-none;
+  }
+  
+  /* Avatar Components */
+  .avatar {
+    @apply rounded-full bg-discord-bg-accent flex items-center justify-center text-discord-text-primary font-medium;
+  }
+  
+  .avatar-sm {
+    @apply avatar w-8 h-8 text-sm;
+  }
+  
+  .avatar-md {
+    @apply avatar w-10 h-10 text-base;
+  }
+  
+  .avatar-lg {
+    @apply avatar w-12 h-12 text-lg;
+  }
+  
+  .avatar-xl {
+    @apply avatar w-16 h-16 text-xl;
+  }
+  
+  /* Status Indicators */
+  .status-online {
+    @apply bg-discord-status-online;
+  }
+  
+  .status-idle {
+    @apply bg-discord-status-idle;
+  }
+  
+  .status-dnd {
+    @apply bg-discord-status-dnd;
+  }
+  
+  .status-offline {
+    @apply bg-discord-status-offline;
+  }
+  
+  /* Modal Components */
+  .modal-overlay {
+    @apply fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50;
+  }
+  
+  .modal-content {
+    @apply bg-discord-bg-primary rounded-lg shadow-discord-lg max-w-md w-full mx-4;
+  }
+  
+  /* Sidebar Components */
+  .sidebar {
+    @apply bg-discord-bg-secondary border-r border-discord-bg-accent;
+  }
+  
+  .sidebar-header {
+    @apply px-4 py-3 border-b border-discord-bg-accent;
+  }
+  
+  /* Team/Channel List */
+  .channel-list {
+    @apply space-y-1 px-2;
+  }
+  
+  .channel-item {
+    @apply flex items-center px-2 py-1 rounded text-discord-channel-default hover:text-discord-channel-hover hover:bg-discord-bg-accent transition-all duration-150 cursor-pointer;
+  }
+  
+  .channel-item.active {
+    @apply text-discord-channel-selected bg-discord-bg-accent;
+  }
+  
+  .channel-item.unread {
+    @apply text-discord-channel-unread font-medium;
+  }
+  
+  /* Utility Classes */
+  .text-gradient {
+    @apply bg-gradient-to-r from-discord-blurple to-discord-green bg-clip-text text-transparent;
+  }
+  
+  .border-gradient {
+    @apply border-2 border-transparent bg-gradient-to-r from-discord-blurple to-discord-green bg-clip-border;
+  }
+  
+  /* Loading Animations */
+  .loading-spinner {
+    @apply animate-spin rounded-full border-2 border-discord-bg-accent border-t-discord-blurple;
+  }
+  
+  .loading-pulse {
+    @apply animate-pulse bg-discord-bg-accent rounded;
+  }
+  
+  /* Notification Badge */
+  .notification-badge {
+    @apply absolute -top-1 -right-1 bg-discord-red text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-medium;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+}

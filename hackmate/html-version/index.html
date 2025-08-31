@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackMate - Find Your Perfect Hackathon Team</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-code"></i>
+                <span>HackMate</span>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#teams" class="nav-link">Teams</a>
+                <a href="#profile" class="nav-link">Profile</a>
+                <a href="#chat" class="nav-link">Chat</a>
+            </div>
+            <div class="nav-auth">
+                <button class="btn-login" id="loginBtn">Login</button>
+                <button class="btn-signup" id="signupBtn">Sign Up</button>
+                <div class="user-menu" id="userMenu" style="display: none;">
+                    <div class="user-avatar" id="navUserAvatar">U</div>
+                    <span class="username" id="username">User</span>
+                    <button class="btn-logout" id="logoutBtn">Logout</button>
+                </div>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Find Your Perfect <span class="highlight">Hackathon Team</span></h1>
+                    <p>Connect with like-minded developers, designers, and innovators. Build amazing projects together.</p>
+                    <div class="hero-buttons">
+                        <button class="btn-primary" id="getStartedBtn">Get Started</button>
+                        <button class="btn-secondary" id="learnMoreBtn">Learn More</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="code-animation">
+                        <div class="code-line"></div>
+                        <div class="code-line"></div>
+                        <div class="code-line"></div>
+                        <div class="code-line"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Team Matching</h3>
+                    <p>Find teammates based on skills, interests, and project goals</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-comments"></i>
+                    <h3>Real-time Chat</h3>
+                    <p>Communicate instantly with your team members</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Project Showcase</h3>
+                    <p>Display your hackathon projects and achievements</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Teams Section -->
+        <section id="teams" class="section">
+            <div class="section-header">
+                <h2>Available Teams</h2>
+                <button class="btn-primary" id="createTeamBtn">Create Team</button>
+            </div>
+            <div class="teams-grid" id="teamsGrid">
+                <!-- Teams will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Profile Section -->
+        <section id="profile" class="section">
+            <div class="profile-container">
+                <div class="profile-header">
+                    <div class="profile-avatar">
+                        <div class="profile-image" id="profileImage">U</div>
+                        <button class="btn-upload" id="uploadBtn">
+                            <i class="fas fa-camera"></i>
+                        </button>
+                    </div>
+                    <div class="profile-info">
+                        <h2 id="profileName">Your Name</h2>
+                        <p id="profileTitle">Full Stack Developer</p>
+                        <div class="profile-stats">
+                            <div class="stat">
+                                <span class="stat-number">5</span>
+                                <span class="stat-label">Teams Joined</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">12</span>
+                                <span class="stat-label">Projects</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">3</span>
+                                <span class="stat-label">Wins</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-content">
+                    <div class="profile-section">
+                        <h3>Skills</h3>
+                        <div class="skills-container" id="skillsContainer">
+                            <!-- Skills will be populated by JavaScript -->
+                        </div>
+                        <button class="btn-add" id="addSkillBtn">Add Skill</button>
+                    </div>
+                    <div class="profile-section">
+                        <h3>Bio</h3>
+                        <textarea id="profileBio" placeholder="Tell us about yourself...">Passionate developer with experience in web technologies and mobile apps. Love working on innovative projects that solve real-world problems.</textarea>
+                        <button class="btn-save" id="saveBioBtn">Save Bio</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chat Section -->
+        <section id="chat" class="section">
+            <div class="chat-container">
+                <div class="chat-sidebar">
+                    <h3>Teams</h3>
+                    <div class="chat-teams" id="chatTeams">
+                        <!-- Chat teams will be populated by JavaScript -->
+                    </div>
+                </div>
+                <div class="chat-main">
+                    <div class="chat-header">
+                        <h3 id="chatTitle">Select a team to start chatting</h3>
+                    </div>
+                    <div class="chat-messages" id="chatMessages">
+                        <!-- Messages will be populated by JavaScript -->
+                    </div>
+                    <div class="chat-input">
+                        <input type="text" id="messageInput" placeholder="Type a message..." disabled>
+                        <button id="sendBtn" disabled>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modals -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close" id="closeLogin">&times;</span>
+            <h2>Login to HackMate</h2>
+            <form id="loginForm">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="btn-primary">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" id="switchToSignup">Sign up</a></p>
+        </div>
+    </div>
+
+    <div class="modal" id="signupModal">
+        <div class="modal-content">
+            <span class="close" id="closeSignup">&times;</span>
+            <h2>Join HackMate</h2>
+            <form id="signupForm">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Confirm Password" required>
+                <button type="submit" class="btn-primary">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="#" id="switchToLogin">Login</a></p>
+        </div>
+    </div>
+
+    <div class="modal" id="createTeamModal">
+        <div class="modal-content">
+            <span class="close" id="closeCreateTeam">&times;</span>
+            <h2>Create New Team</h2>
+            <form id="createTeamForm">
+                <input type="text" placeholder="Team Name" required>
+                <textarea placeholder="Team Description" required></textarea>
+                <input type="text" placeholder="Required Skills (comma separated)" required>
+                <input type="number" placeholder="Max Team Size" min="2" max="10" required>
+                <button type="submit" class="btn-primary">Create Team</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
